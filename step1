@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Квест - Крок 1</title>
+</head>
+<body>
+  <h2>Крок 1</h2>
+  <p>Запитання: Яке місто є столицею Грузії?</p>
+  <input type="text" id="answer" placeholder="Ваша відповідь">
+  <button onclick="checkAnswer()">Перевірити</button>
+  <p id="result"></p>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim().toLowerCase();
+      const correct = "тбілісі";
+      const code = "GENATSVALE2024";
+
+      if (input === correct) {
+        document.getElementById("result").innerHTML = "Правильно! Ваше кодове слово: <strong>" + code + "</strong>";
+      } else {
+        document.getElementById("result").innerText = "Неправильно. Спробуйте ще раз!";
+      }
+    }
+  </script>
+</body>
+</html>
