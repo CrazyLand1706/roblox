@@ -2,11 +2,27 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Квест - Крок 1</title>
+  <title>Крок 1</title>
+  <style>
+    body {
+      background-image: url('https://i.pinimg.com/736x/1e/40/a1/1e40a14e4a15caf1d8ff2fed405753c6.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: sans-serif;
+      color: white;
+      text-align: center;
+      padding-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
   <h2>Крок 1</h2>
-  <p>Запитання: Яке місто є столицею Грузії?</p>
+  <p>Запитання: Магічне число їжаків?</p>
   <input type="text" id="answer" placeholder="Ваша відповідь">
   <button onclick="checkAnswer()">Перевірити</button>
   <p id="result"></p>
@@ -14,7 +30,7 @@
   <script>
     function checkAnswer() {
       const input = document.getElementById("answer").value.trim().toLowerCase();
-      const correct = "тбілісі";
+      const correct = "11";
       const code = "GENATSVALE2024";
 
       if (input === correct) {
