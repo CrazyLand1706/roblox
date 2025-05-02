@@ -2,36 +2,77 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Крок 1</title>
   <style>
     body {
-      background-image: url('https://i.pinimg.com/736x/1e/40/a1/1e40a14e4a15caf1d8ff2fed405753c6.jpg');
+      margin: 0;
+      padding: 0;
+      background-image: url('https://travels.in.ua/api/Photo/PhotoStreamCIL/2229');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      font-family: sans-serif;
-      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       text-align: center;
-      padding-top: 50px;
+      backdrop-filter: brightness(0.8);
     }
+
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+
     input, button {
-      padding: 10px;
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
       font-size: 16px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input {
+      background: #fff;
+      color: #000;
+    }
+
+    button {
+      background-color: #ff9800;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h2>Крок 1</h2>
-  <p>Запитання: Магічне число їжаків?</p>
-  <input type="text" id="answer" placeholder="Ваша відповідь">
-  <button onclick="checkAnswer()">Перевірити</button>
-  <p id="result"></p>
+  <div class="container">
+    <h2>Крок 1</h2>
+    <p>Запитання: Число їжачків? </p>
+    <input type="text" id="answer" placeholder="Ваша відповідь">
+    <button onclick="checkAnswer()">Перевірити</button>
+    <p id="result"></p>
+  </div>
 
   <script>
     function checkAnswer() {
       const input = document.getElementById("answer").value.trim().toLowerCase();
       const correct = "11";
-      const code = "GENATSVALE2024";
+      const code = "люблю тебе";
 
       if (input === correct) {
         document.getElementById("result").innerHTML = "Правильно! Ваше кодове слово: <strong>" + code + "</strong>";
