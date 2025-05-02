@@ -8,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-image: url('https://travels.in.ua/api/Photo/PhotoStreamCIL/2229');
+      background-image: url('https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/7/f/3/7f3ab11ae38410b5ef9349a731c9b76173aecd4a.jpeg'); 
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -53,31 +53,59 @@
     }
 
     #result {
-      margin-top: 15px;
-      font-size: 18px;
+      margin-top: 20px;
+      font-size: 22px;
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .correct {
+      background: #4caf50;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
       font-weight: bold;
+      box-shadow: 0 0 10px #4caf50;
+    }
+
+    .wrong {
+      background: #f44336;
+      color: white;
+      padding: 12px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #f44336;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Крок 1</h2>
-    <p>Запитання: Число їжачків? </p>
+    <h2>Завдання 1</h2>
+    <p>Введіть правильно відповідь</p>
     <input type="text" id="answer" placeholder="Ваша відповідь">
     <button onclick="checkAnswer()">Перевірити</button>
-    <p id="result"></p>
+    <div id="result"></div>
   </div>
 
   <script>
     function checkAnswer() {
       const input = document.getElementById("answer").value.trim().toLowerCase();
-      const correct = "11";
-      const code = "люблю тебе";
+      const correct = "10";
+      const code = "БАТУТ";
+      const resultEl = document.getElementById("result");
+
+      resultEl.style.display = "block";
 
       if (input === correct) {
-        document.getElementById("result").innerHTML = "Правильно! Ваше кодове слово: <strong>" + code + "</strong>";
+        resultEl.innerHTML = "Правильно! Ваше кодове слово: <br><strong style='font-size: 24px;'>" + code + "</strong>";
+        resultEl.className = "correct";
       } else {
-        document.getElementById("result").innerText = "Неправильно. Спробуйте ще раз!";
+        resultEl.innerText = "Неправильно. Спробуйте ще раз!";
+        resultEl.className = "wrong";
       }
     }
   </script>
