@@ -58,7 +58,7 @@
 
     #result {
       margin-top: 20px;
-      font-size: 22px;
+      font-size: 18px;
       display: none;
       animation: fadeIn 0.6s ease-in-out;
     }
@@ -80,6 +80,13 @@
       box-shadow: 0 0 10px #f44336;
     }
 
+    iframe {
+      width: 100%;
+      height: 215px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
@@ -88,6 +95,8 @@
 </head>
 <body>
   <div class="container">
+    <iframe src="https://www.youtube.com/embed/2h__EhPkcPk" frameborder="0" allowfullscreen></iframe>
+
     <h2>Завдання 1</h2>
     <p>Введіть правильно відповідь</p>
     <input type="text" id="answer" placeholder="Ваша відповідь">
@@ -98,17 +107,16 @@
   <script>
     function checkAnswer() {
       const input = document.getElementById("answer").value.trim().toLowerCase();
-      const correct = "10";
-      const code = "БАТУТ";
+      const correct = "9508";
       const resultEl = document.getElementById("result");
 
       resultEl.style.display = "block";
 
       if (input === correct) {
-        resultEl.innerHTML = "Правильно! Ваше кодове слово: <br><strong style='font-size: 24px;'>" + code + "</strong>";
+        resultEl.innerHTML = "✅ Правильно!<br><br>🔓 Знайдіть та відкрийте комірку №1<br>за допомогою коду <strong style='font-size: 22px;'>5467</strong>";
         resultEl.className = "correct";
       } else {
-        resultEl.innerText = "Неправильно. Спробуйте ще раз!";
+        resultEl.innerText = "❌ Неправильно. Спробуйте ще раз!";
         resultEl.className = "wrong";
       }
     }
