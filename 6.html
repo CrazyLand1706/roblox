@@ -101,4 +101,14 @@
 
       resultEl.style.display = "block";
 
-      if (input === corre
+      if (input === correct) {
+        resultEl.innerHTML = "✅ Завантаження наступного рівня...<br><br>🔐 Ключ від комірки №6 шукайте біля входу у Crazy Land";
+        resultEl.className = "correct";
+      } else {
+        resultEl.innerText = "❌ Неправильно. Спробуйте ще раз!";
+        resultEl.className = "wrong";
+      }
+    }
+  </script>
+</body>
+</html>
