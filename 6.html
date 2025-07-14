@@ -86,7 +86,7 @@
 <body>
   <div class="container">
     <h2>Рівень 5</h2>
-    <p>Розшифруйте звуковий код від наступного рівня</p>
+    <p>Розшифруйте зашифрований код від наступного рівня</p>
 
     <input type="text" id="answer" placeholder="Код">
     <button onclick="checkAnswer()">Перевірити</button>
@@ -96,19 +96,9 @@
   <script>
     function checkAnswer() {
       const input = document.getElementById("answer").value.trim();
-      const correct = "159";
+      const correct = "1590";
       const resultEl = document.getElementById("result");
 
       resultEl.style.display = "block";
 
-      if (input === correct) {
-        resultEl.innerHTML = "✅ Завантаження наступного рівня...<br><br>🔐 Ключ від комірки №6 шукайте біля входу у Crazy Land";
-        resultEl.className = "correct";
-      } else {
-        resultEl.innerText = "❌ Неправильно. Спробуйте ще раз!";
-        resultEl.className = "wrong";
-      }
-    }
-  </script>
-</body>
-</html>
+      if (input === corre
