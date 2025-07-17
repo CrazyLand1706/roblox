@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Крок 9</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/b/5/d/b5df22212253eda5f0cebe857cc84dd9a874a478.jpeg'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      backdrop-filter: brightness(0.8);
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input {
+      background: #fff;
+      color: #000;
+    }
+
+    button {
+      background-color: #ff9800;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .correct {
+      background: #4caf50;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #4caf50;
+    }
+
+    .wrong {
+      background: #f44336;
+      color: white;
+      padding: 12px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #f44336;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Рівень 8</h2>
+    <p>Введіть пароль</p>
+
+    <input type="text" id="answer" placeholder="Код">
+    <button onclick="checkAnswer()">Перевірити</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      const correct = "543";
+      const resultEl = document.getElementById("result");
+
+      resultEl.style.display = "block";
+
+      if (input === correct) {
+        resultEl.innerHTML = "✅ Завантаження наступного рівня...<br><br>🔐 Ключ від наступної комірки шукайте біля банкетної кімнати №3.";
+        resultEl.className = "correct";
+      } else {
+        resultEl.innerText = "❌ Неправильно. Спробуйте ще раз!";
+        resultEl.className = "wrong";
+      }
+    }
+  </script>
+</body>
+</html>
