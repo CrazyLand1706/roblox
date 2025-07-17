@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Фінал гри</title>
   <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       padding: 0;
-      background-image: url('https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/b/5/d/b5df22212253eda5f0cebe857cc84dd9a874a478.jpeg'); 
+      background-image: url('https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/b/5/d/b5df22212253eda5f0cebe857cc84dd9a874a478.jpeg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -18,9 +18,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       min-height: 100vh;
       text-align: center;
+      padding-top: 40px;
       backdrop-filter: brightness(0.8);
     }
 
@@ -30,12 +31,13 @@
       border-radius: 10px;
       width: 90%;
       max-width: 420px;
+      margin-bottom: 20px;
     }
 
     .hint-image {
       width: 100%;
       border-radius: 10px;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
 
     input, button {
@@ -91,12 +93,12 @@
 </head>
 <body>
   <div class="container">
-    <img class="hint-image" src="https://github.com/CrazyLand1706/roblox/blob/d6cb46cf34d04f79fdbdacb68e8856beba536546/__10.jpg?raw=true" alt="Підказка">
-
     <h2>Вітаємо<br>у фіналі гри 🔥</h2>
     <p>Порахуйте,<br>скільки усього робуксів<br>злили на ці скіни,<br>і отримаєте фінальний код!</p>
 
-    <input type="text" id="answer" placeholder="Ваш код">
+    <img class="hint-image" src="https://github.com/CrazyLand1706/roblox/blob/d6cb46cf34d04f79fdbdacb68e8856beba536546/__10.jpg?raw=true" alt="Підказка">
+
+    <input type="text" id="answer" placeholder="Ваш код" />
     <button onclick="checkAnswer()">Перевірити</button>
     <div id="result"></div>
   </div>
